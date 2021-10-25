@@ -9,7 +9,7 @@ tasks:
       sed -i '1,$s/sdkman_selfupdate_enable=true/sdkman_selfupdate_enable=false/' /home/gitpod/.sdkman/etc/config 
       sdk install java 21.2.0.r11-grl -y
       export GRAALVM_HOME=$JAVA_HOME
-     ${GRAALVM_HOME}/bin/gu install native-image
+     $GRAALVM_HOME/bin/gu install native-image
 ports: 
   - port: 8080
   - port: 5005
