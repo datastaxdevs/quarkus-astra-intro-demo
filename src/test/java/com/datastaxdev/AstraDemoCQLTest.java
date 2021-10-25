@@ -14,8 +14,7 @@ public class AstraDemoCQLTest {
         given()
           .when().get("/hello")
           .then()
-             .statusCode(200)
-            .body(conta("hello"));
+             .statusCode(200);
     }
 
 }
