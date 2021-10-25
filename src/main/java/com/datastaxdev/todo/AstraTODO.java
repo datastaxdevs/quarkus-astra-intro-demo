@@ -25,7 +25,7 @@ public class AstraTODO {
     @Inject
     QuarkusCqlSession cqlSession;
 
-    private String keyspaceName = "free";
+    private String keyspaceName = "todolist";
     private String tableName = "todolist";
 
     public boolean onStart(@Observes StartupEvent ev){
