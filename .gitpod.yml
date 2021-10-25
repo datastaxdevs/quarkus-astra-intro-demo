@@ -1,0 +1,33 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - name: setup
+    init: |
+      cd /workspace/quarkus-astra-intro-demo 
+      sed -i '1,$s/sdkman_auto_answer=false/sdkman_auto_answer=true/' /home/gitpod/.sdkman/etc/config 
+      sed -i '1,$s/sdkman_selfupdate_enable=true/sdkman_selfupdate_enable=false/' /home/gitpod/.sdkman/etc/config 
+      sdk install java 21.2.0.r11-grl -y
+      export GRAALVM_HOME=$JAVA_HOME
+     ${GRAALVM_HOME}/bin/gu install native-image
+ports: 
+  - port: 8080
+  - port: 5005
+    onOpen: open-browser 
+
+github:
+  prebuilds:
+    master: true
+    branches: true
+    pullRequests: true
+    pullRequestsFromForks: false
+    addCheck: true
+    addComment: false
+    addBadge: true
+    addLabel: false
+
+vscode:
+  extensions:
+    - redhat.java
+    - github.vscode-pull-request-github
+    - gabrielbb.vscode-lombok
