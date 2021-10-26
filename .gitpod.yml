@@ -1,6 +1,6 @@
 tasks:
   - name: setup
-    init: |
+    before: |
       echo "Setting up, please wait!"
       cd /workspace/quarkus-astra-intro-demo 
       sed -i '1,$s/sdkman_auto_answer=false/sdkman_auto_answer=true/' /home/gitpod/.sdkman/etc/config 
