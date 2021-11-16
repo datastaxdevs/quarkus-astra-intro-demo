@@ -1,17 +1,18 @@
-package com.datastaxdev.todo.api;
+package com.datastaxdev.todo.model;
 
 import io.quarkus.runtime.annotations.RegisterForReflection;
 
 @RegisterForReflection
-public class Todo {
+public class ToDo {
+
     private String id;
     private String title;
     private boolean completed;
 
-    public Todo() {
+    public ToDo() {
     }
 
-    public Todo(String id, String title, boolean completed) {
+    public ToDo(String id, String title, boolean completed) {
         this.id = id;
         this.title = title;
         this.completed = completed;
