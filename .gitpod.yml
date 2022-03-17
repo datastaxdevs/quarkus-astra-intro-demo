@@ -5,7 +5,7 @@ tasks:
       cd /workspace/quarkus-astra-intro-demo 
       sed -i '1,$s/sdkman_auto_answer=false/sdkman_auto_answer=true/' /home/gitpod/.sdkman/etc/config 
       sed -i '1,$s/sdkman_selfupdate_enable=true/sdkman_selfupdate_enable=false/' /home/gitpod/.sdkman/etc/config 
-      sdk install java 21.2.0.r11-grl -y
+      sdk install java 22.0.0.2.r11-grl -y
       export GRAALVM_HOME=$JAVA_HOME
       "$GRAALVM_HOME"/bin/gu install native-image
       sudo apt-get install --reinstall xdg-utils --fix-missing -y
@@ -15,11 +15,11 @@ tasks:
       echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
       sudo apt-get update
       sudo apt-get install -y kubectl
-ports: 
+ports:
   - port: 5005
   - port: 8080
   - port: 8081
-    onOpen: open-browser 
+    onOpen: open-browser
 
 github:
   prebuilds:

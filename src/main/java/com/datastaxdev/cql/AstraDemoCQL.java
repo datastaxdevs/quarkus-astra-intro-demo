@@ -9,7 +9,6 @@ import javax.ws.rs.core.MediaType;
 import com.datastax.oss.driver.api.core.cql.ResultSet;
 import com.datastax.oss.driver.api.core.cql.Row;
 import com.datastax.oss.quarkus.runtime.api.session.QuarkusCqlSession;
-import io.smallrye.common.annotation.Blocking;
 
 @Path("/hello")
 public class AstraDemoCQL {
@@ -18,10 +17,9 @@ public class AstraDemoCQL {
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
-    @Blocking
     public String hello() {
         ResultSet rs = this.cqlSession
-                .execute("SELECT data_center FROM system.local");
+          .execute("SELECT data_center FROM system.local");
 
         Row row = rs.one();
         String version = row.getFormattedContents();
