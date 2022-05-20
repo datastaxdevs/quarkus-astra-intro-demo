@@ -1,5 +1,7 @@
 package com.datastaxdev.todo.api;
 
+import java.util.StringJoiner;
+
 import io.quarkus.runtime.annotations.RegisterForReflection;
 
 @RegisterForReflection
@@ -39,5 +41,14 @@ public class Todo {
 
     public void setCompleted(boolean completed) {
         this.completed = completed;
+    }
+
+    @Override
+    public String toString() {
+        return new StringJoiner(", ", Todo.class.getSimpleName() + "[", "]")
+          .add("id='" + id + "'")
+          .add("title='" + title + "'")
+          .add("completed=" + completed)
+          .toString();
     }
 }
