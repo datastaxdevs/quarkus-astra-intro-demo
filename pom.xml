@@ -6,7 +6,7 @@
   <artifactId>quarkus-astra-intro-demo</artifactId>
   <version>0.01</version>
   <properties>
-    <assertj.version>3.23.1</assertj.version>
+    <assertj.version>3.24.2</assertj.version>
     <compiler-plugin.version>3.8.1</compiler-plugin.version>
     <mapstruct.version>1.5.3.Final</mapstruct.version>
     <maven.compiler.parameters>true</maven.compiler.parameters>
